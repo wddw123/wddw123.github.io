@@ -8,41 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="2022年10月新版，Windows环境下，基于hexo框架，GitHub托管，搭建的博客 一、需要的工具nodejs1.下载安装 下载LTS版本,安装路径自己决定，但一定要记住    我这里选的是C盘，其他选项保持默认即可   2.环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口  输入以下命令 node -v  #查看node版本 npm -v   #查看npm版本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客搭建教程">
-<meta property="og:url" content="http://example.com/2022/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:title" content="博客搭建">
+<meta property="og:url" content="http://example.com/2022/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="xiaokai的博客">
 <meta property="og:description" content="2022年10月新版，Windows环境下，基于hexo框架，GitHub托管，搭建的博客 一、需要的工具nodejs1.下载安装 下载LTS版本,安装路径自己决定，但一定要记住    我这里选的是C盘，其他选项保持默认即可   2.环境配置 在键盘按下【win+R】键，输入cmd，然后回车，打开cmd窗口  输入以下命令 node -v  #查看node版本 npm -v   #查看npm版本">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20221027134227036-1666954606585-1.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_15-55-34.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_15-59-10.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-00-39.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-02-36.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-03-23.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-04-49.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20221027135847116-1666955092841-8.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-07-16.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-09-42.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-10-23.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-12-34.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20221027142831962-1666955172548-16.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-16-54-1666955188851-18.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-20-53.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20221027143746417.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-27-42.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-35-27.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-36-12.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-37-51.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-38-23.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-40-17.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_16-42-30.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_17-01-03.png">
-<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/Snipaste_2022-10-28_18-37-37.png">
-<meta property="article:published_time" content="2022-10-28T10:38:04.000Z">
-<meta property="article:modified_time" content="2022-10-28T11:11:45.335Z">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20221027134227036-1666954606585-1.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_15-55-34.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_15-59-10.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-00-39.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-02-36.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-03-23.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-04-49.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20221027135847116-1666955092841-8.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-07-16.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-09-42.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-10-23.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-12-34.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20221027142831962-1666955172548-16.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-16-54-1666955188851-18.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-20-53.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20221027143746417.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-27-42.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-35-27.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-36-12.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-37-51.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-38-23.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-40-17.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_16-42-30.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_17-01-03.png">
+<meta property="og:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Snipaste_2022-10-28_18-37-37.png">
+<meta property="article:published_time" content="2022-10-28T13:12:45.000Z">
+<meta property="article:modified_time" content="2022-10-28T13:16:41.599Z">
 <meta property="article:author" content="xiaokai">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20221027134227036-1666954606585-1.png">
+<meta name="twitter:image" content="http://example.com/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/image-20221027134227036-1666954606585-1.png">
 
 
 <link rel="icon" href="/img/ad.jpg">
@@ -99,7 +99,7 @@
 
 
 <ul>
-    <li><div class="all active" data-rel="全部文章">全部文章<small>(2)</small></div></li>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(1)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -111,7 +111,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="1">
 <input type="hidden" id="yelog_site_word_count" value="1.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -172,14 +172,6 @@
            data-author="" >
             <span class="post-title" title="博客搭建">博客搭建</span>
             <span class="post-date" title="2022-10-28 21:12:45">2022/10/28</span>
-        </a>
-        
-        <a  class="全部文章 "
-           href="/2022/10/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="博客搭建教程">博客搭建教程</span>
-            <span class="post-date" title="2022-10-28 18:38:04">2022/10/28</span>
         </a>
         
         <div id="no-item-tips">
