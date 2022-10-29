@@ -66,8 +66,6 @@
 
 
 
-<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
-
 <script src="/js/iconfont.js?v=1.1.0" ></script>
 <script src="/js/custom-iconfont.js?v=1.1.0" ></script>
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -485,25 +483,29 @@ git config --global --add safe.directory /media/data/users/jhu3szh/serialize
 
 
 
-    <div id="comments"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <div id="comments">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NzUyOS8zMzk5Mw==">
+        <script type="text/javascript">
+			(function(d, s) {
+				var j, e = d.getElementsByTagName(s)[0];
 
-<script type="text/javascript">
-    $.getScript('/js/gitalk.js', function () {
-        var gitalk = new Gitalk({
-            clientID: '99691c16d2e83021c44f',
-            clientSecret: '987557712863014498b0ae52a68c793099e36487',
-            repo: 'wddw123.github.io',
-            owner: 'wddw123',
-            admin: ['wddw123'],
-            id: decodeURI(location.pathname),
-            distractionFreeMode: 'true',
-            language: 'zh-CN',
-            perPage: parseInt('10',10)
-        })
-        gitalk.render('comments')
-    })
-</script>
+				if (typeof LivereTower === 'function') { return; }
+
+				j = d.createElement(s);
+				window.livereOptions = {
+					eagerLoading: true,
+					scrollEventTargetSelector: '#post'
+                }
+				j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				j.async = true;
+				e.parentNode.insertBefore(j, e);
+			})(document, 'script');
+        </script>
+        <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
 
 
 
