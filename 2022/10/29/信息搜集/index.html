@@ -6,53 +6,56 @@
   <meta name="keywords" content=" 信息 ">
   <meta name="description" content="信息搜集 | xiaokai的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="信息收集对于渗透测试可以说是重中之重，正所谓“知己知彼，百战不殆”。所以我们的信息收集也是一样，收集的信息自然也是越多越好。对于目标的信息收集，主要针对目标的服务器系统、数据库系统、中间件系统、应用程序系统、以及边界设备等信息。以及收集针对于系统管理员的信息收集。 信息搜集对于信息收集方式，可以分为以下两类： 1、主动信息收集：直接与目标进行交互，通过对交互过程中的信息进行收集。 例如：Nmap扫">
+<meta name="description" content="XSS漏洞一、XSS跨站脚本分类1. XSS漏洞介绍跨站脚本攻击(Cross Site Scripting)，为了不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。  2.反射型XSS反射型X">
 <meta property="og:type" content="article">
-<meta property="og:title" content="信息搜集">
-<meta property="og:url" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/index.html">
+<meta property="og:title" content="XSS">
+<meta property="og:url" content="http://example.com/2022/11/02/XSS/index.html">
 <meta property="og:site_name" content="xiaokai的博客">
-<meta property="og:description" content="信息收集对于渗透测试可以说是重中之重，正所谓“知己知彼，百战不殆”。所以我们的信息收集也是一样，收集的信息自然也是越多越好。对于目标的信息收集，主要针对目标的服务器系统、数据库系统、中间件系统、应用程序系统、以及边界设备等信息。以及收集针对于系统管理员的信息收集。 信息搜集对于信息收集方式，可以分为以下两类： 1、主动信息收集：直接与目标进行交互，通过对交互过程中的信息进行收集。 例如：Nmap扫">
+<meta property="og:description" content="XSS漏洞一、XSS跨站脚本分类1. XSS漏洞介绍跨站脚本攻击(Cross Site Scripting)，为了不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS。恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。  2.反射型XSS反射型X">
 <meta property="og:locale">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101101850193.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101102006771.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101102454529.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101103552621.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101120757615.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101121412333.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101121450026.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101121701936.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101121644471.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101121838349.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101122311620.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101123014527.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101123334993.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101123447879.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101124129325.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101124417888.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101124657215.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101124858178.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101124953489.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101125002451.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101125200022.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101232236422.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101232339399.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101232331383.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101232320577.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101233845552.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101233927781.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234019660.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234048681.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234302150.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234343444.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234459913.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234617234.png">
-<meta property="og:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101234738102.png">
-<meta property="article:published_time" content="2022-10-29T07:43:26.000Z">
-<meta property="article:modified_time" content="2022-11-01T16:06:17.072Z">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102222751206.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102222944571.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102223027351.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102223204760.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102223128752.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102223536115.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102223732751.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224153591.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224256094.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224346244.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224337457.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224539026.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224620726.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224611189.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224644948.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224659113.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224852989.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224919182.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102224950418.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225048555.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225307447.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225258512.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225333400.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225430808.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225502753.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225700110.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225719961.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225822933.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225816176.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102225843993.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230213287.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230242207.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230349592.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230340888.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230639239.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230653463.png">
+<meta property="og:image" content="http://example.com/2022/11/02/XSS/image-20221102230728145.png">
+<meta property="article:published_time" content="2022-11-02T14:25:51.000Z">
+<meta property="article:modified_time" content="2022-11-02T15:07:35.235Z">
 <meta property="article:author" content="xiaokai">
-<meta property="article:tag" content="信息">
+<meta property="article:tag" content="XSS漏洞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/10/29/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/image-20221101101850193.png">
+<meta name="twitter:image" content="http://example.com/2022/11/02/XSS/image-20221102222751206.png">
 
 
 <link rel="icon" href="/img/ad.jpg">
